@@ -14,8 +14,8 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="flex flex-col items-center justify-center h-screen text-center px-4">
-        <h2 className="text-4xl md:text-6xl font-bold mb-4">Hello, I'm Jhordan Suzuki</h2>
-        <p className="text-lg md:text-2xl mb-6">I'm a Full-Stack Developer building modern web applications.</p>
+        <h2 className="text-4xl md:text-6xl font-bold mb-4">Hello, I&apos;m Jhordan Suzuki</h2>
+        <p className="text-lg md:text-2xl mb-6">I&apos;m a Full-Stack Developer building modern web applications.</p>
         <a 
           href="#projects" 
           className="px-6 py-3 bg-purple-600 rounded-lg hover:bg-purple-700 transition"
