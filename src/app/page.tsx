@@ -28,7 +28,7 @@ export default function Home() {
       <section id="about" className="py-20 px-6 bg-gray-800 text-center">
         <h3 className="text-3xl font-bold mb-4">About Me</h3>
         <p className="max-w-2xl mx-auto">
-          I'm a passionate developer with experience in JavaScript, React, Node.js, and modern web technologies. 
+          I&apos;m a passionate developer with experience in JavaScript, React, Node.js, and modern web technologies. 
           I love creating performant and scalable web applications with clean code.
         </p>
       </section>
