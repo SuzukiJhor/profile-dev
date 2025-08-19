@@ -1,102 +1,81 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="min-h-screen font-sans bg-gray-900 text-gray-100">
+      {/* Header */}
+      <header className="flex justify-between items-center p-6 bg-gray-800">
+        <h1 className="text-2xl font-bold">Jhordan Suzuki</h1>
+        <nav className="space-x-4">
+          <a href="#about" className="hover:text-purple-400">About</a>
+          <a href="#skills" className="hover:text-purple-400">Skills</a>
+          <a href="#projects" className="hover:text-purple-400">Projects</a>
+          <a href="#contact" className="hover:text-purple-400">Contact</a>
+        </nav>
+      </header>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Hero Section */}
+      <section className="flex flex-col items-center justify-center h-screen text-center px-4">
+        <h2 className="text-4xl md:text-6xl font-bold mb-4">Hello, I'm Jhordan Suzuki</h2>
+        <p className="text-lg md:text-2xl mb-6">I'm a Full-Stack Developer building modern web applications.</p>
+        <a 
+          href="#projects" 
+          className="px-6 py-3 bg-purple-600 rounded-lg hover:bg-purple-700 transition"
+        >
+          View My Work
+        </a>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="py-20 px-6 bg-gray-800 text-center">
+        <h3 className="text-3xl font-bold mb-4">About Me</h3>
+        <p className="max-w-2xl mx-auto">
+          I'm a passionate developer with experience in JavaScript, React, Node.js, and modern web technologies. 
+          I love creating performant and scalable web applications with clean code.
+        </p>
+      </section>
+
+      {/* Skills Section */}
+      <section id="skills" className="py-20 px-6 text-center">
+        <h3 className="text-3xl font-bold mb-8">My Skills</h3>
+        <div className="flex flex-wrap justify-center gap-6">
+          {['JavaScript', 'React', 'Node.js', 'TypeScript', 'Next.js', 'Firebase'].map(skill => (
+            <div 
+              key={skill} 
+              className="px-4 py-2 bg-gray-700 rounded-lg hover:bg-purple-600 transition"
+            >
+              {skill}
+            </div>
+          ))}
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
+      </section>
+
+      {/* Projects Section */}
+      <section id="projects" className="py-20 px-6 bg-gray-800 text-center">
+        <h3 className="text-3xl font-bold mb-8">Projects</h3>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Example project card */}
+          <div className="p-6 bg-gray-700 rounded-lg hover:scale-105 transition">
+            <h4 className="text-xl font-bold mb-2">Portfolio Website</h4>
+            <p>A personal portfolio website built with Next.js and Tailwind CSS.</p>
+          </div>
+          <div className="p-6 bg-gray-700 rounded-lg hover:scale-105 transition">
+            <h4 className="text-xl font-bold mb-2">Todo App</h4>
+            <p>A full-stack Todo app using React, Node.js, and MongoDB.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-20 px-6 text-center">
+        <h3 className="text-3xl font-bold mb-4">Contact Me</h3>
+        <p className="mb-6">Feel free to reach out for collaborations or freelance work.</p>
+        <a href="mailto:jhordan@example.com" className="px-6 py-3 bg-purple-600 rounded-lg hover:bg-purple-700 transition">
+          Say Hello
         </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-6 bg-gray-900 text-center">
+        <p>© 2025 Jhordan Suzuki. All rights reserved.</p>
       </footer>
     </div>
   );
