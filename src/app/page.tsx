@@ -1,82 +1,73 @@
+import Image from 'next/image';
+
 export default function Home() {
   return (
-    <div className="min-h-screen font-sans bg-gray-900 text-gray-100">
+    <div className="flex w-full h-[100vh]">
       {/* Header */}
-      <header className="flex justify-between items-center p-6 bg-gray-800">
-        <h1 className="text-2xl font-bold">Jhordan Suzuki</h1>
-        <nav className="space-x-4">
-          <a href="#about" className="hover:text-purple-400">About</a>
-          <a href="#skills" className="hover:text-purple-400">Skills</a>
-          <a href="#projects" className="hover:text-purple-400">Projects</a>
-          <a href="#contact" className="hover:text-purple-400">Contact</a>
-        </nav>
+      <header className="fixed top-0 left-0 w-full h-[100px] flex items-center justify-between px-8 z-50">
+        {/* Logo */}
+        <div className="flex items-center space-x-2">
+          {/* <span className="text-white font-bold text-lg">Meu Portfólio</span> */}
+        </div>
+
+        {/* Ícone de menu */}
+        <button className="text-[#08111A] text-3xl focus:outline-none">
+          {/* Ícone Hamburguer */}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-8 w-8"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
       </header>
 
-      {/* Hero Section */}
-      <section className="flex flex-col items-center justify-center h-screen text-center px-4">
-        <h2 className="text-4xl md:text-6xl font-bold mb-4">Hello, I&apos;m Jhordan Suzuki</h2>
-        <p className="text-lg md:text-2xl mb-6">I&apos;m a Full-Stack Developer building modern web applications.</p>
-        <a 
-          href="#projects" 
-          className="px-6 py-3 bg-purple-600 rounded-lg hover:bg-purple-700 transition"
-        >
-          View My Work
-        </a>
-      </section>
-
-      {/* About Section */}
-      <section id="about" className="py-20 px-6 bg-gray-800 text-center">
-        <h3 className="text-3xl font-bold mb-4">About Me</h3>
-        <p className="max-w-2xl mx-auto">
-          I&apos;m a passionate developer with experience in JavaScript, React, Node.js, and modern web technologies. 
-          I love creating performant and scalable web applications with clean code.
-        </p>
-      </section>
-
-      {/* Skills Section */}
-      <section id="skills" className="py-20 px-6 text-center">
-        <h3 className="text-3xl font-bold mb-8">My Skills</h3>
-        <div className="flex flex-wrap justify-center gap-6">
-          {['JavaScript', 'React', 'Node.js', 'TypeScript', 'Next.js', 'Firebase'].map(skill => (
-            <div 
-              key={skill} 
-              className="px-4 py-2 bg-gray-700 rounded-lg hover:bg-purple-600 transition"
-            >
-              {skill}
-            </div>
-          ))}
+      {/* Seção Esquerda */}
+      <div className="w-[75%] items-center justify-left bg-[#08111A]">
+        <div className="w-[500px] h-[350] mt-[20%] ml-[15%]">
+          <p className="text-[#CCF381] font-roboto text-[74px] font-bold leading-[110%]">
+            Desenvolvedor Full stack
+          </p>
+          <p className="text-white font-roboto text-[16px] font-bold leading-normal mt-[5%] opacity-80">
+            Um desenvolvedor web orientado a resultados, especializado em criar e gerenciar sites e aplicativos que impulsionam o sucesso do produto.
+          </p>
         </div>
-      </section>
 
-      {/* Projects Section */}
-      <section id="projects" className="py-20 px-6 bg-gray-800 text-center">
-        <h3 className="text-3xl font-bold mb-8">Projects</h3>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Example project card */}
-          <div className="p-6 bg-gray-700 rounded-lg hover:scale-105 transition">
-            <h4 className="text-xl font-bold mb-2">Portfolio Website</h4>
-            <p>A personal portfolio website built with Next.js and Tailwind CSS.</p>
-          </div>
-          <div className="p-6 bg-gray-700 rounded-lg hover:scale-105 transition">
-            <h4 className="text-xl font-bold mb-2">Todo App</h4>
-            <p>A full-stack Todo app using React, Node.js, and MongoDB.</p>
-          </div>
+        <div className="flex w-[600px] ml-[15%] space-x-8">
+          <p className="text-[#F0FCE0] w-[50%] h-[90px] text-[12px] opacity-50">
+            Criação de interfaces modernas e intuitivas com foco em experiências digitais fáceis e agradáveis para o usuário
+          </p>
+          <p className="text-[#F0FCE0] w-[50%] h-[90px] text-[12px] opacity-50">
+            Back-end sólido e escalável, seu sistema funcionando de forma confiável, mesmo durante o crescimento.
+          </p>
         </div>
-      </section>
+      </div>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-20 px-6 text-center">
-        <h3 className="text-3xl font-bold mb-4">Contact Me</h3>
-        <p className="mb-6">Feel free to reach out for collaborations or freelance work.</p>
-        <a href="mailto:jhordan@example.com" className="px-6 py-3 bg-purple-600 rounded-lg hover:bg-purple-700 transition">
-          Say Hello
-        </a>
-      </section>
+      {/* Imagem */}
+      <div className="absolute top-[20%] left-[60%] w-[290px] h-[276px] shadow-2xl overflow-hidden z-50">
+        <Image
+          src="/especialista.png"
+          alt="Minha foto"
+          width={453}
+          height={466}
+          className="w-full h-full object-cover"
+          priority
+        />
+      </div>
 
-      {/* Footer */}
-      <footer className="py-6 bg-gray-900 text-center">
-        <p>© 2025 Jhordan Suzuki. All rights reserved.</p>
-      </footer>
+      {/* Borda sobre a imagem */}
+      <div className="absolute top-[24%] left-[62%] w-[290px] h-[276px] border-2 border-white pointer-events-none z-20"></div>
+
+      {/* Seção direita */}
+      <div className="w-[25%] h-full bg-[#CCF381]"></div>
     </div>
   );
 }
