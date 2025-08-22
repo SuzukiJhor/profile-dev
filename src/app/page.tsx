@@ -54,7 +54,7 @@ export default function Home() {
       {/* Imagem */}
       <div className="absolute top-[20%] left-[60%] w-[290px] h-[276px] shadow-2xl overflow-hidden z-50">
         <Image
-          src="/especialista.png"
+          src="/especialista-up.png"
           alt="Minha foto"
           width={453}
           height={466}
