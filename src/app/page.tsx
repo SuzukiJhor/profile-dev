@@ -14,30 +14,32 @@ export default function Home() {
       {/* navegação com bolinhas no lado direito */}
       <FullpageNavigation />
 
+      <header className="fixed top-0 left-0 w-full h-[100px] flex items-center justify-between px-8 z-50">
+        <div className="flex items-center space-x-2"></div>
+        <button className="text-[#08111A] text-3xl focus:outline-none">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-8 w-8"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+      </header>
+
       <FullPageSections>
         {/* ====== Seção Hero ====== */}
         <FullpageSection>
           <div className="flex w-full h-[100vh] relative">
             {/* Header */}
-            <header className="fixed top-0 left-0 w-full h-[100px] flex items-center justify-between px-8 z-50">
-              <div className="flex items-center space-x-2"></div>
-              <button className="text-[#08111A] text-3xl focus:outline-none">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-8 w-8"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                </svg>
-              </button>
-            </header>
+
 
             {/* Seção Esquerda */}
             <div className="w-[75%] items-center justify-left bg-[#08111A]">
@@ -86,13 +88,13 @@ export default function Home() {
 
         {/* ====== Seção Arquitetura/Designer ====== */}
         <FullpageSection>
-          <div className="w-full h-[100vh] bg-white py-32 relative flex justify-center items-start space-x-32">
+          <div className="flex w-full h-[100vh] bg-white py-52 relative justify-around items-center">
             {/* Bloco Arquitetura */}
-            <div className="w-[300px]">
-              <h2 className="text-4xl font-bold text-[#08111A] mb-4">
+            <div className="w-[600px]  self-start">
+              <h2 className="text-6xl font-bold text-[#08111A] mb-4">
                 Arquitetura
               </h2>
-              <p className="text-[#08111A] text-sm leading-relaxed opacity-80">
+              <p className="text-[#08111A] text-2xl leading-relaxed opacity-80">
                 Ao desenvolver aplicações, conto com as ferramentas certas, tenho
                 total autonomia para entregar soluções rápidas e resilientes,
                 otimizadas para escala. Performance e escalabilidade estão
@@ -101,11 +103,11 @@ export default function Home() {
             </div>
 
             {/* Bloco Designer */}
-            <div className="w-[300px]">
-              <h2 className="text-4xl font-bold text-[#08111A] mb-4">
+            <div className="w-[600px] self-end">
+              <h2 className="text-6xl font-bold text-[#08111A] mb-4">
                 Designer
               </h2>
-              <p className="text-[#08111A] text-sm leading-relaxed opacity-80">
+              <p className="text-[#08111A] text-2xl leading-relaxed opacity-80">
                 Me interesso em criar interfaces que unem clareza e estética.
                 Trabalho buscando sempre o equilíbrio entre o visual agradável e
                 a experiência simples para quem usa.
@@ -180,42 +182,75 @@ export default function Home() {
         {/* ====== Seção Contato ====== */}
         <FullpageSection>
           <section className="w-full h-[100vh] bg-white flex flex-col items-center justify-center py-32 px-24">
-            <h2 className="text-4xl font-bold text-[#08111A] mb-4">
+            <h2 className="text-6xl font-bold text-[#08111A] mb-8">
               Mande uma mensagem!
             </h2>
-            <p className="text-gray-500 text-center mb-12">
-              Alguma pergunta ou proposta, ou quer apenas dar um salve? Manda
-              bala.
+            <p className="text-gray-500 text-2xl text-center mb-32">
+              Alguma pergunta ou proposta, ou quer apenas dar um salve? Manda bala.
             </p>
 
             <form className="w-full max-w-4xl flex flex-col space-y-6">
+              {/* Nome + Email */}
               <div className="flex space-x-6">
-                <input
-                  type="text"
-                  placeholder="Coloque seu Nome!"
-                  className="w-1/2 border-b border-gray-400 focus:outline-none py-2 px-2 placeholder-gray-400"
-                />
-                <input
-                  type="email"
-                  placeholder="Seu E-mail"
-                  className="w-1/2 border-b border-gray-400 focus:outline-none py-2 px-2 placeholder-gray-400"
-                />
+                {/* Campo Nome */}
+                <div className="relative w-1/2">
+                  <input
+                    type="text"
+                    id="nome"
+                    className="peer w-full border-b border-gray-400 focus:outline-none py-2 px-2 text-gray-800 placeholder-transparent"
+                    placeholder="Seu nome"
+                  />
+                  <label
+                    htmlFor="nome"
+                    className="absolute left-2 top-2 text-gray-400 transition-all duration-200 peer-placeholder-shown:top-2 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base peer-focus:-top-4 peer-focus:text-sm peer-focus:text-[#08111A]"
+                  >
+                    Seu nome
+                  </label>
+                </div>
+
+                {/* Campo Email */}
+                <div className="relative w-1/2">
+                  <input
+                    type="email"
+                    id="email"
+                    className="peer w-full border-b border-gray-400 focus:outline-none py-2 px-2 text-gray-800 placeholder-transparent"
+                    placeholder="Seu e-mail"
+                  />
+                  <label
+                    htmlFor="email"
+                    className="absolute left-2 top-2 text-gray-400 transition-all duration-200 peer-placeholder-shown:top-2 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base peer-focus:-top-4 peer-focus:text-sm peer-focus:text-[#08111A]"
+                  >
+                    Seu e-mail
+                  </label>
+                </div>
               </div>
 
-              <textarea
-                placeholder="Escreva sua mensagem!"
-                className="w-full border-b border-gray-400 focus:outline-none py-2 px-2 placeholder-gray-400 resize-none h-32"
-              />
+              {/* Campo Mensagem */}
+              <div className="relative w-full mt-15">
+                <textarea
+                  id="mensagem"
+                  className="peer w-full border-b border-gray-400 focus:outline-none py-2 px-2 text-gray-800 placeholder-transparent resize-none h-12"
+                  placeholder="Sua mensagem"
+                />
+                <label
+                  htmlFor="mensagem"
+                  className="absolute left-2 top-2 text-gray-400 transition-all duration-200 peer-placeholder-shown:top-2 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base peer-focus:-top-4 peer-focus:text-sm peer-focus:text-[#08111A]"
+                >
+                  Sua mensagem
+                </label>
+              </div>
 
+              {/* Botão */}
               <button
                 type="submit"
-                className="mt-6 w-48 h-12 border-2 border-gray-400 text-gray-400 font-bold text-lg hover:bg-[#CCF381] hover:text-white transition-colors"
+                className="self-center mt-6 w-48 h-12 border-2 border-gray-400 text-gray-400 font-bold text-lg hover:bg-[#CCF381] hover:text-white transition-colors"
               >
                 ENVIAR
               </button>
             </form>
           </section>
         </FullpageSection>
+
       </FullPageSections>
     </Fullpage>
   );
