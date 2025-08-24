@@ -57,7 +57,7 @@ export default function Home() {
               <div className="flex w-[600px] ml-[15%] space-x-8">
                 <p className="text-[#F0FCE0] w-[50%] h-[90px] text-[12px] opacity-50">
                   Criação de interfaces modernas e intuitivas com foco em
-                  experiências digitais fáceis e agradáveis para o usuário
+                  experiências digitais fáceis e agradáveis para o usuário.
                 </p>
                 <p className="text-[#F0FCE0] w-[50%] h-[90px] text-[12px] opacity-50">
                   Back-end sólido e escalável, seu sistema funcionando de forma
