@@ -88,7 +88,7 @@ export default function Home() {
 
         {/* ====== Seção Arquitetura/Designer ====== */}
         <FullpageSection>
-          <div className="flex w-full h-[100vh] bg-white py-52 relative justify-around items-center">
+          <div className="flex w-full h-[100vh] bg-white py-22 relative justify-around items-center">
             {/* Bloco Arquitetura */}
             <div className="w-[600px]  self-start">
               <h2 className="text-6xl font-bold text-[#08111A] mb-4">
