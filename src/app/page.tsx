@@ -135,12 +135,12 @@ export default function Home() {
             </p>
 
             {/* Duas colunas */}
-            <div className="mt-32 w-full flex flex-col lg:flex-row gap-12">
+            <div className="mt-32 w-full flex flex-col lg:flex-row gap-100">
 
 
 
               {/* Coluna de texto "Chega mais" */}
-              <div className="lg:w-1/2 space-y-4 px-60">
+              <div className="lg:w-1/2 space-y-4">
                 <h3 className="text-3xl font-bold text-[#CCF381]">Chega mais,</h3>
                 <p className="text-xl text-white opacity-80">
                   Gerencio tanto o Frontend quanto o Backend de sites e aplicações web,
@@ -154,7 +154,7 @@ export default function Home() {
               </div>
 
               {/* Coluna de skills */}
-              <div className="w-1/2 grid grid-cols-3 gap-4 px-30">
+              <div className="w-1/2 grid grid-cols-3 gap-4">
                 {[
                   "GIT", "PHP", "JavaScript", "Laravel", "Nest.js", "HTML",
                   "Redis", "Next.js", "Wordpress", "SQL", "SEO", "CSS",
