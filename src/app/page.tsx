@@ -122,7 +122,7 @@ export default function Home() {
 
         {/* ====== Seção Sobre ====== */}
         <FullpageSection>
-          <section className="w-full h-[100vh] bg-[#08111A] text-white py-32 px-24 flex flex-col items-center">
+          <section className="w-full h-[100vh] bg-[#08111A] text-white py-20 px-64 flex flex-col items-center">
             {/* Título principal */}
             <h2 className="text-6xl font-bold text-[#CCF381] text-center opacity-90">
               Sobre
@@ -135,12 +135,10 @@ export default function Home() {
             </p>
 
             {/* Duas colunas */}
-            <div className="mt-32 w-full flex flex-col lg:flex-row gap-10">
-
-
+            <div className="mt-32 w-full flex flex-col lg:flex-row">
 
               {/* Coluna de texto "Chega mais" */}
-              <div className="lg:w-1/2 space-y-4">
+              <div className="lg:w-1/2 space-y-4 pr-100">
                 <h3 className="text-3xl font-bold text-[#CCF381]">Chega mais,</h3>
                 <p className="text-xl text-white opacity-80">
                   Gerencio tanto o Frontend quanto o Backend de sites e aplicações web,
@@ -154,7 +152,7 @@ export default function Home() {
               </div>
 
               {/* Coluna de skills */}
-              <div className="w-1/2 grid grid-cols-3 gap-4">
+              <div className="w-1/2 grid grid-cols-3 gap-4 pl-30">
                 {[
                   "GIT", "PHP", "JavaScript", "Laravel", "Nest.js", "HTML",
                   "Redis", "Next.js", "Wordpress", "SQL", "SEO", "CSS",
@@ -162,7 +160,7 @@ export default function Home() {
                 ].map((skill) => (
                   <span
                     key={skill}
-                    className="bg-[#CCF381] text-[#08111A] font-bold px-4 py-2 rounded-md text-center"
+                    className="bg-[#CCF381] text-[#08111A] font-bold px-2 py-2 rounded-md text-center"
                   >
                     {skill}
                   </span>
