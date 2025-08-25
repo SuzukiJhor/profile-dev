@@ -122,7 +122,7 @@ export default function Home() {
 
         {/* ====== Seção Sobre ====== */}
         <FullpageSection>
-          <section className="w-full min-h-[100vh] bg-[#08111A] text-white py-32 px-24 flex flex-col items-center">
+          <section className="w-full h-[100vh] bg-[#08111A] text-white px-24 flex flex-col items-center">
             {/* Título principal */}
             <h2 className="text-6xl font-bold text-[#CCF381] text-center opacity-90">
               Sobre
