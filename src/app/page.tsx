@@ -44,15 +44,15 @@ export default function Home() {
           <FullpageSection>
             <main className="flex w-full h-[100vh] relative">
               {/* Seção Esquerda */}
-              <article className="w-[75%] flex flex-col justify-start bg-[var(--color-dark)] pl-[15%] pt-[20%]">
-                <h1 className="text-[var(--color-primary)] leagueSpartan text-[74px] font-bold leading-[110%]">
+              <article className="w-[75%] flex flex-col justify-start bg-[var(--color-dark)] pl-[15%] pt-[12%]">
+                <h1 className="text-[var(--color-primary)] leagueSpartan text-[74px] font-bold leading-[110%] mr-[55%]">
                   Desenvolvedor Full stack
                 </h1>
-                <p className="text-white text-[16px] font-spartan font-bold leading-normal mt-4 opacity-80">
+                <p className="text-white text-[16px] font-spartan font-bold leading-normal mt-4 opacity-80 mr-[45%]">
                   Um desenvolvedor web orientado a resultados, especializado em criar e gerenciar sites e aplicativos que impulsionam o sucesso do produto.
                 </p>
 
-                <div className="flex w-[600px] mt-8 space-x-8">
+                <div className="flex w-[600px] mt-36 space-x-8">
                   <p className="text-[var(--color-light)] w-[50%] text-[12px] opacity-50">
                     Criação de interfaces modernas e intuitivas com foco em experiências digitais fáceis e agradáveis para o usuário.
                   </p>
@@ -119,7 +119,13 @@ export default function Home() {
                   <article className="lg:w-1/2 space-y-4 pr-0 lg:pr-12">
                     <h3 className="text-2xl sm:text-3xl font-bold text-[var(--color-primary)]">Chega mais,</h3>
                     <p className="text-base sm:text-lg lg:text-xl opacity-80">
-                      Gerencio tanto o Frontend quanto o Backend de sites e aplicações web, sempre com foco no sucesso do produto como um todo...
+                      Gerencio tanto o Frontend quanto o Backend de sites e aplicações web,
+                      sempre com foco no sucesso do produto como um todo. Confira alguns
+                      dos meus trabalhos na seção de Projetos. Gosto de compartilhar conteúdos
+                      sobre o que aprendi ao longo dos anos em Desenvolvimento Web, para ajudar
+                      outras pessoas da comunidade dev. Sinta-se à vontade para se conectar ou
+                      me seguir no LinkedIn e Telegram, onde posto conteúdos úteis sobre
+                      Desenvolvimento Web e Programação.
                     </p>
                   </article>
 
