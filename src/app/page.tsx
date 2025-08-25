@@ -122,62 +122,56 @@ export default function Home() {
 
         {/* ====== Seção Sobre ====== */}
         <FullpageSection>
-          <section className="w-full h-[100vh] bg-[#08111A] text-white py-32 px-24 flex justify-between">
-            {/* Coluna de texto */}
-            <div className="w-1/2 space-y-6">
-              <h2 className="text-4xl font-bold text-[#CCF381]">Sobre</h2>
-              <p className="text-white opacity-80">
-                Aqui você encontrará mais informações sobre mim, o que faço e
-                minhas habilidades atuais, em termos de programação e tecnologia.
-              </p>
+          <section className="w-full min-h-[100vh] bg-[#08111A] text-white py-32 px-24 flex flex-col items-center">
+            {/* Título principal */}
+            <h2 className="text-6xl font-bold text-[#CCF381] text-center opacity-90">
+              Sobre
+            </h2>
 
-              <h3 className="text-2xl font-bold text-[#CCF381] mt-6">
-                Chega mais,
-              </h3>
-              <p className="text-white opacity-80">
-                Gerencio tanto o Frontend quanto o Backend de sites e aplicações
-                web, sempre com foco no sucesso do produto como um todo. Confira
-                alguns dos meus trabalhos na seção de Projetos. Gosto de
-                compartilhar conteúdos sobre o que aprendi ao longo dos anos em
-                Desenvolvimento Web, para ajudar outras pessoas da comunidade
-                dev. Sinta-se à vontade para se conectar ou me seguir no LinkedIn
-                e Telegram, onde posto conteúdos úteis sobre Desenvolvimento Web
-                e Programação.
-              </p>
-            </div>
+            {/* Texto introdutório */}
+            <p className="text-white text-2xl opacity-80 text-center mt-4 max-w-3xl">
+              Aqui você encontrará mais informações sobre mim, o que faço e minhas habilidades
+              atuais, em termos de programação e tecnologia.
+            </p>
 
-            {/* Coluna de skills */}
-            <div className="w-1/2 grid grid-cols-3 gap-4">
-              {[
-                "GIT",
-                "PHP",
-                "JavaScript",
-                "Laravel",
-                "Nest.js",
-                "HTML",
-                "Redis",
-                "Next.js",
-                "Wordpress",
-                "SQL",
-                "SEO",
-                "CSS",
-                "MongoDB",
-                "React.js",
-                "Node.js",
-                "SASS",
-                "Angular",
-                "Vue.js",
-              ].map((skill) => (
-                <span
-                  key={skill}
-                  className="bg-[#CCF381] text-[#08111A] font-bold px-4 py-2 rounded-md text-center"
-                >
-                  {skill}
-                </span>
-              ))}
+            {/* Duas colunas */}
+            <div className="mt-32 w-full flex flex-col lg:flex-row gap-12">
+
+
+
+              {/* Coluna de texto "Chega mais" */}
+              <div className="lg:w-1/2 space-y-4 px-60">
+                <h3 className="text-3xl font-bold text-[#CCF381]">Chega mais,</h3>
+                <p className="text-xl text-white opacity-80">
+                  Gerencio tanto o Frontend quanto o Backend de sites e aplicações web,
+                  sempre com foco no sucesso do produto como um todo. Confira alguns
+                  dos meus trabalhos na seção de Projetos. Gosto de compartilhar conteúdos
+                  sobre o que aprendi ao longo dos anos em Desenvolvimento Web, para ajudar
+                  outras pessoas da comunidade dev. Sinta-se à vontade para se conectar ou
+                  me seguir no LinkedIn e Telegram, onde posto conteúdos úteis sobre
+                  Desenvolvimento Web e Programação.
+                </p>
+              </div>
+
+              {/* Coluna de skills */}
+              <div className="w-1/2 grid grid-cols-3 gap-4 px-30">
+                {[
+                  "GIT", "PHP", "JavaScript", "Laravel", "Nest.js", "HTML",
+                  "Redis", "Next.js", "Wordpress", "SQL", "SEO", "CSS",
+                  "MongoDB", "React.js", "Node.js", "SASS", "Angular", "Vue.js"
+                ].map((skill) => (
+                  <span
+                    key={skill}
+                    className="bg-[#CCF381] text-[#08111A] font-bold px-4 py-2 rounded-md text-center"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
             </div>
           </section>
         </FullpageSection>
+
 
         {/* ====== Seção Contato ====== */}
         <FullpageSection>
