@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 import Image from "next/image";
 import {
   Fullpage,
@@ -8,8 +9,15 @@ import {
 } from "@ap.cx/react-fullpage";
 
 export default function Home() {
+  const [ loadingImage, setLoadingImage ] = React.useState(true);
   return (
-    <Fullpage>
+    <>
+    {loadingImage && (
+        <div className="fixed inset-0 flex justify-center items-center bg-white z-50">
+          <p className="text-[var(--color-dark)]">Carregando...</p>
+        </div>
+      )}
+       <Fullpage>
       {/* navegação com bolinhas no lado direito */}
       <FullpageNavigation />
 
@@ -72,6 +80,7 @@ export default function Home() {
                 height={466}
                 className="w-full h-full object-cover"
                 priority
+                onLoadingComplete={() => setLoadingImage(false)}
               />
             </div>
 
@@ -243,5 +252,7 @@ export default function Home() {
         </FullpageSection>
       </FullPageSections>
     </Fullpage>
+    </>
+   
   );
 }
