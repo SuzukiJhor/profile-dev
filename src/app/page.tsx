@@ -12,10 +12,11 @@ export default function Home() {
     <Fullpage>
       {/* navegação com bolinhas no lado direito */}
       <FullpageNavigation />
+
       {/* Header */}
       <header className="fixed top-0 left-0 w-full h-[100px] flex items-center justify-between px-8 z-50">
         <div className="flex items-center space-x-2"></div>
-        <button className="text-[#08111A] text-3xl focus:outline-none">
+        <button className="text-[var(--color-dark)] text-3xl focus:outline-none">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-8 w-8"
@@ -38,12 +39,12 @@ export default function Home() {
         <FullpageSection>
           <div className="flex w-full h-[100vh] relative">
             {/* Seção Esquerda */}
-            <div className="w-[75%] items-center justify-left bg-[#08111A]">
+            <div className="w-[75%] items-center justify-left bg-[var(--color-dark)]">
               <div className="w-[500px] h-[350] mt-[20%] ml-[15%]">
-                <p className="text-[#CCF381] leagueSpartan text-[74px] font-bold leading-[110%]">
+                <p className="text-[var(--color-primary)] leagueSpartan text-[74px] font-bold leading-[110%]">
                   Desenvolvedor Full stack
                 </p>
-                <p className="text-white text-[16px] font-spartan  font-bold leading-normal mt-[5%] opacity-80">
+                <p className="text-white text-[16px] font-spartan font-bold leading-normal mt-[5%] opacity-80">
                   Um desenvolvedor web orientado a resultados, especializado em
                   criar e gerenciar sites e aplicativos que impulsionam o
                   sucesso do produto.
@@ -51,11 +52,11 @@ export default function Home() {
               </div>
 
               <div className="flex w-[600px] ml-[15%] space-x-8">
-                <p className="text-[#F0FCE0] w-[50%] h-[90px] text-[12px] opacity-50">
+                <p className="text-[var(--color-light)] w-[50%] h-[90px] text-[12px] opacity-50">
                   Criação de interfaces modernas e intuitivas com foco em
                   experiências digitais fáceis e agradáveis para o usuário.
                 </p>
-                <p className="text-[#F0FCE0] w-[50%] h-[90px] text-[12px] opacity-50">
+                <p className="text-[var(--color-light)] w-[50%] h-[90px] text-[12px] opacity-50">
                   Back-end sólido e escalável, seu sistema funcionando de forma
                   confiável, mesmo durante o crescimento.
                 </p>
@@ -78,7 +79,7 @@ export default function Home() {
             <div className="absolute top-[24%] left-[62%] w-[290px] h-[276px] border-2 border-white pointer-events-none z-20"></div>
 
             {/* Seção direita */}
-            <div className="w-[25%] h-full bg-[#CCF381]"></div>
+            <div className="w-[25%] h-full bg-[var(--color-primary)]"></div>
           </div>
         </FullpageSection>
 
@@ -86,11 +87,11 @@ export default function Home() {
         <FullpageSection>
           <div className="flex w-full h-[100vh] bg-white py-32 relative justify-around items-center">
             {/* Bloco Arquitetura */}
-            <div className="w-[600px]  self-start">
-              <h2 className="text-6xl font-bold text-[#08111A] mb-4">
+            <div className="w-[600px] self-start">
+              <h2 className="text-6xl  font-bold text-[var(--color-dark)] mb-4">
                 Arquitetura
               </h2>
-              <p className="text-[#08111A] text-2xl leading-relaxed opacity-80">
+              <p className="text-gray-500 text-2xl leading-relaxed opacity-80">
                 Ao desenvolver aplicações, conto com as ferramentas certas, tenho
                 total autonomia para entregar soluções rápidas e resilientes,
                 otimizadas para escala. Performance e escalabilidade estão
@@ -100,10 +101,10 @@ export default function Home() {
 
             {/* Bloco Designer */}
             <div className="w-[600px] self-end">
-              <h2 className="text-6xl font-bold text-[#08111A] mb-4">
+              <h2 className="text-6xl font-bold text-[var(--color-dark)] mb-4">
                 Designer
               </h2>
-              <p className="text-[#08111A] text-2xl leading-relaxed opacity-80">
+              <p className="text-gray-500 text-2xl leading-relaxed opacity-80">
                 Me interesso em criar interfaces que unem clareza e estética.
                 Trabalho buscando sempre o equilíbrio entre o visual agradável e
                 a experiência simples para quem usa.
@@ -118,10 +119,10 @@ export default function Home() {
 
         {/* ====== Seção Sobre ====== */}
         <FullpageSection>
-          <section className="w-full min-h-screen bg-[#08111A] text-white flex justify-center items-start px-6 sm:px-12 lg:px-32 py-12">
+          <section className="w-full min-h-screen bg-[var(--color-dark)] text-white flex justify-center items-start px-6 sm:px-12 lg:px-32 py-12">
             <div className="flex flex-col items-center w-full max-w-6xl">
               {/* Título principal */}
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#CCF381] text-center opacity-90">
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[var(--color-primary)] text-center opacity-90">
                 Sobre
               </h2>
 
@@ -133,10 +134,11 @@ export default function Home() {
 
               {/* Duas colunas */}
               <div className="mt-12 lg:mt-20 w-full flex flex-col lg:flex-row gap-12">
-
                 {/* Coluna de texto "Chega mais" */}
                 <div className="lg:w-1/2 space-y-4 pr-0 lg:pr-12">
-                  <h3 className="text-2xl sm:text-3xl font-bold text-[#CCF381]">Chega mais,</h3>
+                  <h3 className="text-2xl sm:text-3xl font-bold text-[var(--color-primary)]">
+                    Chega mais,
+                  </h3>
                   <p className="text-base sm:text-lg lg:text-xl opacity-80">
                     Gerencio tanto o Frontend quanto o Backend de sites e aplicações web,
                     sempre com foco no sucesso do produto como um todo. Confira alguns
@@ -157,7 +159,7 @@ export default function Home() {
                   ].map((skill) => (
                     <span
                       key={skill}
-                      className="bg-[#CCF381] text-[#08111A] font-bold px-2 py-2 rounded-md text-center text-sm sm:text-base"
+                      className="bg-[var(--color-primary)] text-[var(--color-dark)] font-bold px-2 py-2 rounded-md text-center text-sm sm:text-base"
                     >
                       {skill}
                     </span>
@@ -171,7 +173,7 @@ export default function Home() {
         {/* ====== Seção Contato ====== */}
         <FullpageSection>
           <section className="w-full h-[100vh] bg-white flex flex-col items-center justify-center py-32 px-24">
-            <h2 className="text-6xl font-bold text-[#08111A] mb-8">
+            <h2 className="text-6xl font-bold text-[var(--color-dark)] mb-8">
               Mande uma mensagem!
             </h2>
             <p className="text-gray-500 text-2xl text-center mb-32">
@@ -191,7 +193,7 @@ export default function Home() {
                   />
                   <label
                     htmlFor="nome"
-                    className="absolute left-2 top-2 text-gray-400 transition-all duration-200 peer-placeholder-shown:top-2 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base peer-focus:-top-4 peer-focus:text-sm peer-focus:text-[#08111A]"
+                    className="absolute left-2 top-2 text-gray-400 transition-all duration-200 peer-placeholder-shown:top-2 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base peer-focus:-top-4 peer-focus:text-sm peer-focus:text-[var(--color-dark)]"
                   >
                     Seu nome
                   </label>
@@ -207,7 +209,7 @@ export default function Home() {
                   />
                   <label
                     htmlFor="email"
-                    className="absolute left-2 top-2 text-gray-400 transition-all duration-200 peer-placeholder-shown:top-2 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base peer-focus:-top-4 peer-focus:text-sm peer-focus:text-[#08111A]"
+                    className="absolute left-2 top-2 text-gray-400 transition-all duration-200 peer-placeholder-shown:top-2 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base peer-focus:-top-4 peer-focus:text-sm peer-focus:text-[var(--color-dark)]"
                   >
                     Seu e-mail
                   </label>
@@ -223,7 +225,7 @@ export default function Home() {
                 />
                 <label
                   htmlFor="mensagem"
-                  className="absolute left-2 top-2 text-gray-400 transition-all duration-200 peer-placeholder-shown:top-2 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base peer-focus:-top-4 peer-focus:text-sm peer-focus:text-[#08111A]"
+                  className="absolute left-2 top-2 text-gray-400 transition-all duration-200 peer-placeholder-shown:top-2 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base peer-focus:-top-4 peer-focus:text-sm peer-focus:text-[var(--color-dark)]"
                 >
                   Sua mensagem
                 </label>
@@ -232,14 +234,13 @@ export default function Home() {
               {/* Botão */}
               <button
                 type="submit"
-                className="self-center mt-6 w-48 h-12 border-2 border-gray-400 text-gray-400 font-bold text-lg hover:bg-[#CCF381] hover:text-white transition-colors"
+                className="self-center mt-6 w-48 h-12 border-2 border-gray-400 text-gray-400 font-bold text-lg hover:bg-[var(--color-primary)] hover:text-white transition-colors"
               >
                 ENVIAR
               </button>
             </form>
           </section>
         </FullpageSection>
-
       </FullPageSections>
     </Fullpage>
   );
