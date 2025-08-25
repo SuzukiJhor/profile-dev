@@ -1,5 +1,4 @@
 "use client";
-
 import Image from "next/image";
 import {
   Fullpage,
@@ -13,7 +12,7 @@ export default function Home() {
     <Fullpage>
       {/* navegação com bolinhas no lado direito */}
       <FullpageNavigation />
-
+      {/* Header */}
       <header className="fixed top-0 left-0 w-full h-[100px] flex items-center justify-between px-8 z-50">
         <div className="flex items-center space-x-2"></div>
         <button className="text-[#08111A] text-3xl focus:outline-none">
@@ -38,16 +37,13 @@ export default function Home() {
         {/* ====== Seção Hero ====== */}
         <FullpageSection>
           <div className="flex w-full h-[100vh] relative">
-            {/* Header */}
-
-
             {/* Seção Esquerda */}
             <div className="w-[75%] items-center justify-left bg-[#08111A]">
               <div className="w-[500px] h-[350] mt-[20%] ml-[15%]">
-                <p className="text-[#CCF381] font-roboto text-[74px] font-bold leading-[110%]">
+                <p className="text-[#CCF381] leagueSpartan text-[74px] font-bold leading-[110%]">
                   Desenvolvedor Full stack
                 </p>
-                <p className="text-white font-roboto text-[16px] font-bold leading-normal mt-[5%] opacity-80">
+                <p className="text-white text-[16px] font-spartan  font-bold leading-normal mt-[5%] opacity-80">
                   Um desenvolvedor web orientado a resultados, especializado em
                   criar e gerenciar sites e aplicativos que impulsionam o
                   sucesso do produto.
