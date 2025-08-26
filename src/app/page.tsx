@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <>
       {loadingImage && (
-        <div className="fixed inset-0 flex justify-center items-center bg-white z-50">
+        <div className="fixed inset-0 flex justify-center items-center bg-white/70 backdrop-blur-sm z-50">
           <p className="text-[var(--color-dark)]">Carregando...</p>
         </div>
       )}
@@ -48,16 +48,16 @@ export default function Home() {
                 <h1 className="text-[var(--color-primary)] leagueSpartan text-[74px] font-bold leading-[110%] mr-[55%]">
                   Desenvolvedor Full stack
                 </h1>
-                <p className="text-white text-[16px] font-spartan font-bold leading-normal mt-4 opacity-80 mr-[45%]">
-                  Um desenvolvedor web orientado a resultados, especializado em criar e gerenciar sites e aplicativos que impulsionam o sucesso do produto.
+                <p className="text-white text-xl font-spartan font-bold leading-normal mt-4 opacity-80 mr-[45%]">
+                  Um desenvolvedor web orientado a resultados, apto a criar e gerenciar sites e aplicativos que impulsionam o sucesso do produto.
                 </p>
 
                 <div className="flex w-[600px] mt-36 space-x-8">
-                  <p className="text-[var(--color-light)] w-[50%] text-[12px] opacity-50">
+                  <p className="text-[var(--color-light)] w-[50%] text-[14px] opacity-50">
                     Criação de interfaces modernas e intuitivas com foco em experiências digitais fáceis e agradáveis para o usuário.
                   </p>
-                  <p className="text-[var(--color-light)] w-[50%] text-[12px] opacity-50">
-                    Back-end sólido e escalável, seu sistema funcionando de forma confiável, mesmo durante o crescimento.
+                  <p className="text-[var(--color-light)] w-[50%] text-[14px] opacity-50">
+                    Back-end consistente e adaptável, seu sistema funcionando de forma confiável, mesmo durante o crescimento.
                   </p>
                 </div>
               </article>
@@ -85,19 +85,18 @@ export default function Home() {
 
           {/* ====== Seção Arquitetura/Designer ====== */}
           <FullpageSection>
-            <section className="flex w-full h-[100vh] bg-white py-32 relative justify-around items-center">
-              <article className="w-[600px] self-start">
+            <section className="flex w-full h-[100vh] bg-white py-32 relative justify-around items-center px-8">
+              <article className="w-[500px] self-start">
                 <h2 className="text-6xl font-bold text-[var(--color-dark)] mb-4">Arquitetura</h2>
-                <p className="text-gray-500 text-2xl leading-relaxed opacity-80">
-                  Ao desenvolver aplicações, conto com as ferramentas certas, tenho total autonomia para entregar soluções rápidas e resilientes, otimizadas para escala. Performance e escalabilidade estão sempre no meu radar.
+                <p className="text-gray-500 text-2xl leading-snug opacity-80">
+                  Ao desenvolver aplicações, utilizo as ferramentas adequadas e tenho autonomia para entregar soluções eficientes, resilientes e preparadas para escalar. Performance, boas práticas e escalabilidade fazem parte do meu processo de desenvolvimento.
                 </p>
               </article>
 
-              <article className="w-[600px] self-end">
+              <article className="w-[500px] self-end">
                 <h2 className="text-6xl font-bold text-[var(--color-dark)] mb-4">Designer</h2>
-                <p className="text-gray-500 text-2xl leading-relaxed opacity-80">
-                  Me interesso em criar interfaces que unem clareza e estética. Trabalho buscando sempre o equilíbrio entre o visual agradável e a experiência simples para quem usa.
-                </p>
+                <p className="text-gray-500 text-2xl leading-snug opacity-80">
+                  Meu trabalho em design é orientado pela criação de interfaces que aliam estética e usabilidade, utilizando boas práticas de UI/UX para entregar experiências funcionais e atraentes.                </p>
               </article>
 
               {/* Elementos decorativos */}
