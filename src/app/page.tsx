@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import { Menu, Transition } from "@headlessui/react";
 import {
   Fullpage,
   FullPageSections,
@@ -24,18 +25,103 @@ export default function Home() {
 
         {/* Header */}
         <header className="fixed top-0 left-0 w-full h-[100px] flex items-center justify-between px-8 z-50">
-          <div className="flex items-center space-x-2"></div>
-          <button className="text-[var(--color-dark)] text-3xl focus:outline-none" aria-label="Menu">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-8 w-8"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
+          <div></div>
+
+          <Menu as="div" className="relative">
+            {({ open }) => (
+              <>
+                {/* Botão */}
+                <Menu.Button className="relative flex flex-col items-end justify-center p-5 space-y-2 focus:outline-none cursor-pointer text-[var(--color-dark)] z-50">
+                  <div
+                    className={`h-[4px] w-10 bg-current rounded-full transition-transform duration-300 ${open ? "rotate-45 translate-y-[6px]" : ""
+                      }`}
+                  />
+                  <div
+                    className={`h-[4px] w-6 bg-current rounded-full transition-opacity duration-300 ${open ? "opacity-0" : "opacity-100"
+                      }`}
+                  />
+                  <div
+                    className={`h-[4px] w-10 bg-current rounded-full transition-transform duration-300 ${open ? "-rotate-45 -translate-y-[6px]" : ""
+                      }`}
+                  />
+                </Menu.Button>
+
+                {/* Itens com transição */}
+                <Transition
+                  as={React.Fragment}
+                  enter="transition ease-out duration-500 delay-200"
+                  enterFrom="opacity-0 translate-y-4"
+                  enterTo="opacity-100 translate-y-0"
+                  leave="transition ease-in duration-300"
+                  leaveFrom="opacity-100 translate-y-0"
+                  leaveTo="opacity-0 translate-y-4"
+                >
+                  <Menu.Items className="absolute right-[-10] mt-[-70] w-84 bg-white border border-gray-200 shadow-2xl focus:outline-none z-40 py-20 px-8">
+                    <Menu.Item>
+                      {({ active }) => (
+                        <a
+                          href="#projetos"
+                          className={`block px-6 py-4 text-lg font-medium transition-colors ${active
+                            ? "bg-[var(--color-hero)] text-[var(--color-primary)]"
+                            : "text-[var(--color-dark)]"
+                            }`}
+                        >
+                          Projetos
+                        </a>
+                      )}
+                    </Menu.Item>
+                    <Menu.Item>
+                      {({ active }) => (
+                        <a
+                          href="#ResumoProfissional"
+                          className={`block px-6 py-4 text-lg font-medium transition-colors ${active
+                            ? "bg-[var(--color-hero)] text-[var(--color-primary)]"
+                            : "text-[var(--color-dark)]"
+                            }`}
+                        >
+                          Resumo Profissional
+                        </a>
+                      )}
+                    </Menu.Item>
+                    <Menu.Item>
+                      {({ active }) => (
+                        <a
+                          href="#contato"
+                          className={`block px-6 py-4 text-lg font-medium transition-colors text-[var(--color-dark)]`}
+                        >
+                          Contato
+                        </a>
+                      )}
+                    </Menu.Item>
+                    <Menu.Item>
+                      {({ active }) => (
+                        <a
+                          href="#linkedin"
+                          className={`block px-6 py-4 text-lg font-medium transition-colors ${active
+                            ? "bg-[var(--color-hero)] text-[var(--color-primary)]"
+                            : "text-[var(--color-dark)]"
+                            }`}
+                        >
+                          in/jhordansuzuki                        </a>
+                      )}
+                    </Menu.Item>
+                    <Menu.Item>
+                      {({ active }) => (
+                        <a
+                          href="#github"
+                          className={`block px-6 py-4 text-lg font-medium transition-colors ${active
+                            ? "bg-[var(--color-hero)] text-[var(--color-primary)]"
+                            : "text-[var(--color-dark)]"
+                            }`}
+                        >
+                          github.com/SuzukiJhor                        </a>
+                      )}
+                    </Menu.Item>
+                  </Menu.Items>
+                </Transition>
+              </>
+            )}
+          </Menu>
         </header>
 
         <FullPageSections>
@@ -65,7 +151,7 @@ export default function Home() {
               {/* Imagem */}
               <div className="absolute top-[20%] left-[60%] w-[290px] h-[276px] shadow-2xl overflow-hidden z-50">
                 <Image
-                  src="/especialista-up.png"
+                  src="/autoridade.webp"
                   alt="Minha foto"
                   width={453}
                   height={466}
