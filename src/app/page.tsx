@@ -12,6 +12,18 @@ import {
 export default function Home() {
   const [loadingImage, setLoadingImage] = React.useState(true);
 
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    // e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      nome: formData.get("nome"),
+      email: formData.get("email"),
+      mensagem: formData.get("mensagem"),
+    };
+
+    console.log("Dados do formulário:", data);
+  }
+
   return (
     <>
       {loadingImage && (
@@ -57,24 +69,25 @@ export default function Home() {
                   leaveTo="opacity-0 translate-y-4"
                 >
                   <Menu.Items className="absolute right-[-10] mt-[-70] w-84 bg-white border border-gray-200 shadow-2xl focus:outline-none z-40 py-20 px-8">
-                    <Menu.Item>
-                      {({ active }) => (
-                        <a
-                          href="#projetos"
-                          className={`block px-6 py-4 text-lg font-medium transition-colors ${active
-                            ? "bg-[var(--color-hero)] text-[var(--color-primary)]"
-                            : "text-[var(--color-dark)]"
-                            }`}
+
+                    {/* Projetos - Em breve */}
+                    <Menu.Item disabled>
+                      {() => (
+                        <span
+                          title="Em breve"
+                          className="block px-6 py-4 text-lg font-medium text-gray-400 cursor-not-allowed"
                         >
                           Projetos
-                        </a>
+                        </span>
                       )}
                     </Menu.Item>
+
+                    {/* Resumo Profissional */}
                     <Menu.Item>
                       {({ active }) => (
                         <a
                           href="#ResumoProfissional"
-                          className={`block px-6 py-4 text-lg font-medium transition-colors ${active
+                          className={`block px-6 py-4 text-lg font-medium transition-colors cursor-not-allowed ${active
                             ? "bg-[var(--color-hero)] text-[var(--color-primary)]"
                             : "text-[var(--color-dark)]"
                             }`}
@@ -83,38 +96,40 @@ export default function Home() {
                         </a>
                       )}
                     </Menu.Item>
+
+                    {/* Contato */}
                     <Menu.Item>
                       {({ active }) => (
                         <a
                           href="#contato"
-                          className={`block px-6 py-4 text-lg font-medium transition-colors text-[var(--color-dark)]`}
+                          className={`block px-6 py-4 text-lg font-medium transition-colors text-[var(--color-dark)] cursor-not-allowed`}
                         >
                           Contato
                         </a>
                       )}
                     </Menu.Item>
-                    <Menu.Item>
-                      {({ active }) => (
-                        <a
-                          href="#linkedin"
-                          className={`block px-6 py-4 text-lg font-medium transition-colors ${active
-                            ? "bg-[var(--color-hero)] text-[var(--color-primary)]"
-                            : "text-[var(--color-dark)]"
-                            }`}
+
+                    {/* LinkedIn - Em breve */}
+                    <Menu.Item disabled>
+                      {() => (
+                        <span
+                          title="Em breve"
+                          className="block px-6 py-4 text-lg font-medium text-gray-400 cursor-not-allowed"
                         >
-                          in/jhordansuzuki                        </a>
+                          in/jhordansuzuki
+                        </span>
                       )}
                     </Menu.Item>
-                    <Menu.Item>
-                      {({ active }) => (
-                        <a
-                          href="#github"
-                          className={`block px-6 py-4 text-lg font-medium transition-colors ${active
-                            ? "bg-[var(--color-hero)] text-[var(--color-primary)]"
-                            : "text-[var(--color-dark)]"
-                            }`}
+
+                    {/* GitHub - Em breve */}
+                    <Menu.Item disabled>
+                      {() => (
+                        <span
+                          title="Em breve"
+                          className="block px-6 py-4 text-lg font-medium text-gray-400 cursor-not-allowed"
                         >
-                          github.com/SuzukiJhor                        </a>
+                          github.com/SuzukiJhor
+                        </span>
                       )}
                     </Menu.Item>
                   </Menu.Items>
@@ -241,21 +256,21 @@ export default function Home() {
                 Alguma pergunta ou proposta, ou quer apenas dar um salve? Manda bala.
               </p>
 
-              <form className="w-full max-w-4xl flex flex-col space-y-6">
+              <form onSubmit={handleSubmit} className="w-full max-w-4xl flex flex-col space-y-6">
                 <div className="flex space-x-6">
                   <div className="relative w-1/2">
-                    <input type="text" id="nome" placeholder="Seu nome" className="peer w-full border-b border-gray-400 focus:outline-none py-2 px-2 text-gray-800 placeholder-transparent" />
-                    <label htmlFor="nome" className="absolute left-2 top-2 text-gray-400 transition-all duration-200 peer-placeholder-shown:top-2 peer-placeholder-shown:text-gray-400 peer-focus:-top-4 peer-focus:text-sm peer-focus:text-[var(--color-dark)]">Seu nome</label>
+                    <input type="text" id="nome" name="nome" placeholder="Seu nome" className="peer w-full border-b border-gray-400 focus:outline-none py-2 px-2 text-gray-800 placeholder-transparent" />
+                    <label htmlFor="nome" className="absolute left-2 top-2 text-gray-400 transition-all duration-200 peer-placeholder-shown:top-2 peer-placeholder-shown:text-gray-400 peer-focus:-top-4 peer-focus:text-sm peer-focus:text-[var(--color-dark)]">Nome</label>
                   </div>
 
                   <div className="relative w-1/2">
-                    <input type="email" id="email" placeholder="Seu e-mail" className="peer w-full border-b border-gray-400 focus:outline-none py-2 px-2 text-gray-800 placeholder-transparent" />
-                    <label htmlFor="email" className="absolute left-2 top-2 text-gray-400 transition-all duration-200 peer-placeholder-shown:top-2 peer-placeholder-shown:text-gray-400 peer-focus:-top-4 peer-focus:text-sm peer-focus:text-[var(--color-dark)]">Seu e-mail</label>
+                    <input type="email" name="email" id="email" placeholder="Seu e-mail" className="peer w-full border-b border-gray-400 focus:outline-none py-2 px-2 text-gray-800 placeholder-transparent" />
+                    <label htmlFor="email" className="absolute left-2 top-2 text-gray-400 transition-all duration-200 peer-placeholder-shown:top-2 peer-placeholder-shown:text-gray-400 peer-focus:-top-4 peer-focus:text-sm peer-focus:text-[var(--color-dark)]">E-mail</label>
                   </div>
                 </div>
 
                 <div className="relative w-full mt-15">
-                  <textarea id="mensagem" placeholder="Sua mensagem" className="peer w-full border-b border-gray-400 focus:outline-none py-2 px-2 text-gray-800 placeholder-transparent resize-none h-12" />
+                  <textarea id="mensagem" name="mensagem" placeholder="Sua mensagem" className="peer w-full border-b border-gray-400 focus:outline-none py-2 px-2 text-gray-800 placeholder-transparent resize-none h-12" />
                   <label htmlFor="mensagem" className="absolute left-2 top-2 text-gray-400 transition-all duration-200 peer-placeholder-shown:top-2 peer-placeholder-shown:text-gray-400 peer-focus:-top-4 peer-focus:text-sm peer-focus:text-[var(--color-dark)]">Sua mensagem</label>
                 </div>
 
