@@ -11,6 +11,8 @@ import {
 
 export default function Home() {
   const [loadingImage, setLoadingImage] = React.useState(true);
+  const [isSobreVisible, setIsSobreVisible] = React.useState(false);
+  const sobreRef = React.useRef<HTMLDivElement | null>(null);
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     // e.preventDefault();
@@ -23,6 +25,19 @@ export default function Home() {
 
     console.log("Dados do formulário:", data);
   }
+
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsSobreVisible(entry.isIntersecting),
+      { threshold: 0.5 }
+    );
+    const currentSobreRef = sobreRef.current;
+    console.log(currentSobreRef);
+    if (currentSobreRef) observer.observe(currentSobreRef);
+    return () => {
+      if (currentSobreRef) observer.unobserve(currentSobreRef);
+    };
+  }, []);
 
   return (
     <>
@@ -43,19 +58,14 @@ export default function Home() {
             {({ open }) => (
               <>
                 {/* Botão */}
-                <Menu.Button className="relative flex flex-col items-end justify-center p-5 space-y-2 focus:outline-none cursor-pointer text-[var(--color-dark)] z-50">
-                  <div
-                    className={`h-[4px] w-10 bg-current rounded-full transition-transform duration-300 ${open ? "rotate-45 translate-y-[6px]" : ""
-                      }`}
-                  />
-                  <div
-                    className={`h-[4px] w-6 bg-current rounded-full transition-opacity duration-300 ${open ? "opacity-0" : "opacity-100"
-                      }`}
-                  />
-                  <div
-                    className={`h-[4px] w-10 bg-current rounded-full transition-transform duration-300 ${open ? "-rotate-45 -translate-y-[6px]" : ""
-                      }`}
-                  />
+                <Menu.Button
+                  className={`relative flex flex-col items-end justify-center p-5 space-y-2 focus:outline-none cursor-pointer z-50
+                    ${isSobreVisible ? "text-white" : "text-[var(--color-dark)]"}
+                  `}
+                >
+                  <div className={`h-[4px] w-10 bg-current rounded-full transition-transform duration-300 ${open ? "rotate-45 translate-y-[6px]" : ""}`} />
+                  <div className={`h-[4px] w-6 bg-current rounded-full transition-opacity duration-300 ${open ? "opacity-0" : "opacity-100"}`} />
+                  <div className={`h-[4px] w-10 bg-current rounded-full transition-transform duration-300 ${open ? "-rotate-45 -translate-y-[6px]" : ""}`} />
                 </Menu.Button>
 
                 {/* Itens com transição */}
@@ -172,7 +182,7 @@ export default function Home() {
                   height={466}
                   className="w-full h-full object-cover"
                   priority
-                  onLoadingComplete={() => setLoadingImage(false)}
+                  onLoad={() => setLoadingImage(false)}
                 />
               </div>
 
@@ -208,7 +218,7 @@ export default function Home() {
 
           {/* ====== Seção Sobre ====== */}
           <FullpageSection>
-            <section className="w-full min-h-screen bg-[var(--color-dark)] text-white flex justify-center items-start px-6 sm:px-12 lg:px-32 py-12">
+            <section ref={sobreRef} className="w-full min-h-screen bg-[var(--color-dark)] text-white flex justify-center items-start px-6 sm:px-12 lg:px-32 py-12">
               <div className="flex flex-col items-center w-full max-w-6xl">
                 <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[var(--color-primary)] text-center opacity-90">Sobre</h2>
                 <p className="text-base sm:text-lg lg:text-2xl opacity-80 text-center mt-4 max-w-3xl">
