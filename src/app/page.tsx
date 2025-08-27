@@ -32,7 +32,6 @@ export default function Home() {
       { threshold: 0.5 }
     );
     const currentSobreRef = sobreRef.current;
-    console.log(currentSobreRef);
     if (currentSobreRef) observer.observe(currentSobreRef);
     return () => {
       if (currentSobreRef) observer.unobserve(currentSobreRef);
